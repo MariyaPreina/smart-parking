@@ -1,6 +1,16 @@
 <script setup>
 import TheHeader from '@/components/layout/TheHeader.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
+
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+};
 </script>
 
 <template>
@@ -15,7 +25,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
               Интеллектуальная система мониторинга парковочных мест в Москве. Экономьте время и нервы с помощью
               технологий искусственного интеллекта.
             </p>
-            <BaseButton>Узнать больше</BaseButton>
+            <BaseButton @click="scrollToSection('about')">Узнать больше</BaseButton>
           </div>
 
           <div class="hero-image">
@@ -42,6 +52,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 
 <style lang="scss" scoped>
 .hero-section {
+  display: flex;
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -51,6 +62,7 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 .hero-inner {
   display: flex;
   align-items: center;
+  margin: auto;
 }
 
 .hero-content {
@@ -64,17 +76,17 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 
   .title {
     color: $color-purple-1000;
-    font-size: 3rem;
+    font-size: 45px;
     font-weight: 600;
     line-height: 1.1;
-    margin: 0 0 1.5rem;
+    margin: 0 0 20px;
     text-transform: uppercase;
   }
 
   .text {
     color: $color-grey-500;
-    margin-bottom: 2rem;
-    font-size: 1rem;
+    margin-bottom: 20px;
+    font-size: 18px;
     line-height: 1.6;
   }
 }
@@ -108,69 +120,5 @@ import BaseButton from '@/components/ui/BaseButton.vue'
   height: 100%;
   transform: rotate(180deg) scaleX(1.5);
   transform-origin: center;
-}
-
-@media (max-width: 1024px) {
-  .wave-background {
-    width: 80%;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap;
-
-    .logo {
-      margin-bottom: 1rem;
-    }
-
-    .navigation {
-      order: 3;
-      width: 100%;
-      margin-top: 1rem;
-
-      ul {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem 2rem;
-      }
-    }
-
-    .get-started-btn {
-      order: 2;
-    }
-  }
-
-  .hero-content {
-    flex-direction: column;
-
-    .hero-text {
-      text-align: center;
-      margin-bottom: 2rem;
-
-      h1 {
-        font-size: 2.5rem;
-      }
-    }
-
-    .hero-image {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-  }
-
-  .wave-background {
-    width: 100%;
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 70%);
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-text {
-    h1 {
-      font-size: 2rem;
-    }
-  }
 }
 </style>
