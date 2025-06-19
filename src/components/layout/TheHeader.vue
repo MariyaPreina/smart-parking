@@ -12,6 +12,15 @@ const scrollToSection = (sectionId) => {
 
 const isSticky = ref(false);
 const scrollThreshold = 100;
+const isDropdownOpen = ref(false);
+
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value;
+};
+
+const closeDropdown = () => {
+  isDropdownOpen.value = false;
+};
 
 const handleScroll = () => {
   isSticky.value = window.scrollY > scrollThreshold;
@@ -19,10 +28,17 @@ const handleScroll = () => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
+  document.addEventListener('click', (event) => {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown && !dropdown.contains(event.target)) {
+      closeDropdown();
+    }
+  });
 });
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
+  document.removeEventListener('click', closeDropdown);
 });
 </script>
 
@@ -37,11 +53,21 @@ onUnmounted(() => {
 
       <nav class="navigation">
         <ul>
-          <li><a href="#about" @click.prevent="scrollToSection('about')">О приложении</a></li>
-          <li><a href="#about" @click.prevent="scrollToSection('advantages')">Преимущества</a></li>
-          <li><a href="#course">Course</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><div @click="scrollToSection('about')">О приложении</div></li>
+          <li><div @click="scrollToSection('advantages')">Преимущества</div></li>
+          <li><div @click="scrollToSection('features')">Возможности</div></li>
+          <li><div href="#pricing">Pricing</div></li>
+          <li class="dropdown" @click.stop>
+            <div class="dropdown-toggle" @click="toggleDropdown">
+              Дополнительно
+              <span class="dropdown-arrow" :class="{ 'open': isDropdownOpen }">▼</span>
+            </div>
+            <ul class="dropdown-menu" v-show="isDropdownOpen">
+              <li><div @click="scrollToSection('faq')">FAQ</div></li>
+              <li><div @click="scrollToSection('blog')">Блог</div></li>
+              <li><div @click="scrollToSection('support')">Поддержка</div></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
@@ -86,11 +112,12 @@ onUnmounted(() => {
     gap: 25px;
     padding: 0;
 
-    li a {
+    li div {
       text-decoration: none;
       color: $color-grey-1000;
       font-weight: 500;
       transition: color 0.3s;
+      cursor: pointer;
 
       &:hover {
         color: $color-purple-600;
@@ -98,4 +125,55 @@ onUnmounted(() => {
     }
   }
 }
+
+.dropdown {
+  position: relative;
+
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .dropdown-arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    z-index: 101;
+
+    li {
+      width: 100%;
+
+      div {
+        display: block;
+        padding: 8px 20px;
+        width: 100%;
+
+        &:hover {
+          background-color: rgba($color-purple-600, 0.05);
+        }
+      }
+    }
+  }
+}
+
 </style>
