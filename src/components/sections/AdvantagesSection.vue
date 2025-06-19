@@ -43,7 +43,7 @@
 }
 
 .title {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;

@@ -56,14 +56,14 @@ onUnmounted(() => {
           <li><div @click="scrollToSection('about')">О приложении</div></li>
           <li><div @click="scrollToSection('advantages')">Преимущества</div></li>
           <li><div @click="scrollToSection('features')">Возможности</div></li>
-          <li><div href="#pricing">Pricing</div></li>
+          <li><div @click="scrollToSection('users')">Пользователи</div></li>
           <li class="dropdown" @click.stop>
             <div class="dropdown-toggle" @click="toggleDropdown">
               Дополнительно
               <span class="dropdown-arrow" :class="{ 'open': isDropdownOpen }">▼</span>
             </div>
             <ul class="dropdown-menu" v-show="isDropdownOpen">
-              <li><div @click="scrollToSection('faq')">FAQ</div></li>
+              <li><div @click="scrollToSection('interface')">Интерфейс</div></li>
               <li><div @click="scrollToSection('blog')">Блог</div></li>
               <li><div @click="scrollToSection('support')">Поддержка</div></li>
             </ul>
