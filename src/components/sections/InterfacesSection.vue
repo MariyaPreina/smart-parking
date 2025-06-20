@@ -41,7 +41,7 @@ export default {
   <section id="interface" class="interfaces-section">
     <div class="container">
       <h2 class="title">Пользовательский интерфейс</h2>
-      <p class="text">Smart Parking App: интуитивно понятный дизайн для городской мобильности
+      <p class="text">Smart Parking App: интуитивно понятный дизайн для городской мобильности.
         Приложение разработано с учетом потребностей современного водителя - быстро, удобно, информативно.</p>
       <div class="slider-container">
         <swiper

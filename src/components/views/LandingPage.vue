@@ -5,6 +5,8 @@ import AdvantagesSection from '@/components/sections/AdvantagesSection.vue'
 import FeaturesSection from '@/components/sections/FeaturesSection.vue'
 import InterfacesSection from '@/components/sections/InterfacesSection.vue'
 import UsersSection from '@/components/sections/UsersSection.vue'
+import WhyUsSection from '@/components/sections/WhyUsSection.vue'
+import ContactFormSection from '@/components/sections/ContactFormSection.vue'
 </script>
 
 <template>
@@ -16,6 +18,8 @@ import UsersSection from '@/components/sections/UsersSection.vue'
       <FeaturesSection />
       <UsersSection />
       <InterfacesSection />
+      <WhyUsSection />
+      <ContactFormSection />
     </main>
   </div>
 </template>

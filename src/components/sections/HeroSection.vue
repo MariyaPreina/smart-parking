@@ -108,7 +108,7 @@ const scrollToSection = (sectionId) => {
   width: 70%;
   height: 100%;
   background: linear-gradient(135deg, $color-purple-600 0%, $color-purple-400 100%);
-  clip-path: polygon(100% 0, 100% 100%, 0 100%, 80% 0);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 70% 0);
   z-index: 1;
 }
 

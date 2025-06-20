@@ -1,5 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import BaseButton from '@/components/ui/BaseButton.vue'
+
 const scrollToSection = (sectionId) => {
   const element = document.getElementById(sectionId);
   if (element) {
@@ -64,14 +66,13 @@ onUnmounted(() => {
             </div>
             <ul class="dropdown-menu" v-show="isDropdownOpen">
               <li><div @click="scrollToSection('interface')">Интерфейс</div></li>
-              <li><div @click="scrollToSection('blog')">Блог</div></li>
-              <li><div @click="scrollToSection('support')">Поддержка</div></li>
+              <li><div @click="scrollToSection('whyUs')">Почему мы</div></li>
             </ul>
           </li>
         </ul>
       </nav>
 
-      <button class="get-started-btn">Get Started</button>
+      <BaseButton @click="scrollToSection('contactUs')">Написать нам</BaseButton>
     </div>
   </header>
 </template>
