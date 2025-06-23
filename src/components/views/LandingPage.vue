@@ -7,6 +7,7 @@ import InterfacesSection from '@/components/sections/InterfacesSection.vue'
 import UsersSection from '@/components/sections/UsersSection.vue'
 import WhyUsSection from '@/components/sections/WhyUsSection.vue'
 import ContactFormSection from '@/components/sections/ContactFormSection.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
 </script>
 
 <template>
@@ -21,5 +22,6 @@ import ContactFormSection from '@/components/sections/ContactFormSection.vue'
       <WhyUsSection />
       <ContactFormSection />
     </main>
+    <TheFooter />
   </div>
 </template>
