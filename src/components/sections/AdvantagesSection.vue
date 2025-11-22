@@ -13,7 +13,7 @@
           <div class="icon">
             <img src="@/assets/images/camera.svg" alt="car icon" />
           </div>
-          <p class="text"> Интеграция с городскими видеокамерами</p>
+          <p class="text"> Интеграция с видеокамерами</p>
         </div>
         <div class="card">
           <div class="icon">

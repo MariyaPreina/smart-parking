@@ -58,17 +58,6 @@
               <span class="status">Автоматическое</span>
             </td>
           </tr>
-          <tr>
-            <td>Прогнозирование освобождения мест</td>
-            <td class="competitor">
-              <span class="icon unavailable">✕</span>
-              <span class="status">Отсутствует</span>
-            </td>
-            <td class="smart-parking">
-              <span class="icon available">✓</span>
-              <span class="status">Точность до 95%</span>
-            </td>
-          </tr>
           </tbody>
         </table>
       </div>

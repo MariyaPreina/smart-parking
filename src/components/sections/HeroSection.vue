@@ -22,7 +22,7 @@ const scrollToSection = (sectionId) => {
           <div class="hero-text">
             <h1 class="title">Smart Parking</h1>
             <p class="text">
-              Интеллектуальная система мониторинга парковочных мест в Москве. Экономьте время и нервы с помощью
+              Интеллектуальная система мониторинга парковочных мест. Экономьте время и нервы с помощью
               технологий искусственного интеллекта.
             </p>
             <BaseButton @click="scrollToSection('about')">Узнать больше</BaseButton>
