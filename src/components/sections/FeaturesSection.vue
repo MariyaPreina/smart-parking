@@ -1,46 +1,53 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const features = [
   {
     id: 1,
-    title: 'Мониторинг парковочных мест',
-    content: ['Интеграция с городской системой видеонаблюдения',
-      'ИИ-анализ занятости мест в режиме реального времени'],
-    icon: '🔍'
+    title: 'Видеоаналитика',
+    content: [
+      'Распознавание занятости мест по видеопотоку.',
+      'ИИ-анализ в режиме реального времени на базе Hailo-8 NPU.',
+    ],
+    icon: '🔍',
   },
   {
     id: 3,
-    title: 'Навигационные функции',
-    content: ['Отображение свободных мест на карте',
-      'Построение оптимального маршрута',
-      'Цветовая индикация загруженности',
-      'Сохранение места парковки автомобиля'],
-    icon: '🧭'
+    title: 'Управление парковкой',
+    content: [
+      'Веб-дашборд с картой загруженности.',
+      'Статистика по часам, дням, зонам.',
+      'История событий и отчёты для управляющих',
+    ],
+    icon: '🧭',
   },
   {
     id: 4,
-    title: 'Система уведомлений',
-    content: ['Предупреждение о зонах запрета',
-     'Напоминания о времени парковки',
-      'Контроль платной парковки'],
-    icon: '🔔'
+    title: 'Дополнительные модули',
+    content: [
+      'Распознавание автомобильных номеров',
+      'Контроль въезда и выезда',
+      'Контроль платной парковки',
+    ],
+    icon: '🔔',
   },
   {
     id: 5,
-    title: 'Персональные функции',
-    content: ['Личный кабинет с историей парковок',
-      'Избранные места (дом, работа)',
-      'Статистика использования приложения'],
-    icon: '👤'
-  }
-];
+    title: 'Модели подключения',
+    content: [
+      'CaaS — оборудование и ПО в аренду',
+      'SaaS — подписка на платформу при наличии своего железа',
+      'SDK — лицензирование для интеграторов и партнёров',
+    ],
+    icon: '👤',
+  },
+]
 
-const activeFeature = ref(1);
+const activeFeature = ref(1)
 
 const toggleFeature = (id) => {
-  activeFeature.value = activeFeature.value === id ? null : id;
-};
+  activeFeature.value = activeFeature.value === id ? null : id
+}
 </script>
 
 <template>
@@ -54,7 +61,7 @@ const toggleFeature = (id) => {
             v-for="feature in features"
             :key="feature.id"
             class="accordion-item"
-            :class="{ 'active': activeFeature === feature.id }"
+            :class="{ active: activeFeature === feature.id }"
           >
             <div class="accordion-header" @click="toggleFeature(feature.id)">
               <div class="icon">{{ feature.icon }}</div>
@@ -66,17 +73,23 @@ const toggleFeature = (id) => {
                   viewBox="0 0 16 16"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  :class="{ 'rotated': activeFeature === feature.id }"
+                  :class="{ rotated: activeFeature === feature.id }"
                 >
-                  <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path
+                    d="M4 6L8 10L12 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               </div>
             </div>
-            <div class="accordion-content" :class="{ 'expanded': activeFeature === feature.id }">
+            <div class="accordion-content" :class="{ expanded: activeFeature === feature.id }">
               <ul class="feature-list">
                 <li v-for="(content, i) in feature.content" :key="i">
                   <span class="bullet"></span>
-                  {{content}}
+                  {{ content }}
                 </li>
               </ul>
             </div>
@@ -169,10 +182,11 @@ const toggleFeature = (id) => {
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-  padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-  opacity 0.3s ease,
-  transform 0.3s ease;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease,
+    transform 0.3s ease;
   background-color: rgba($color-purple-600, 0.02);
 
   p {

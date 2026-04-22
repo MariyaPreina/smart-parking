@@ -47,17 +47,6 @@
               <span class="status">Продвинутые алгоритмы</span>
             </td>
           </tr>
-          <tr>
-            <td>Распознавание знаков запрета</td>
-            <td class="competitor">
-              <span class="icon unavailable">✕</span>
-              <span class="status">Отсутствует</span>
-            </td>
-            <td class="smart-parking">
-              <span class="icon available">✓</span>
-              <span class="status">Автоматическое</span>
-            </td>
-          </tr>
           </tbody>
         </table>
       </div>

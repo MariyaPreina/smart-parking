@@ -7,13 +7,13 @@
           <div class="icon">
             <img src="@/assets/images/search_p.svg" alt="car icon" />
           </div>
-          <p class="text">Поиск свободных мест в реальном времени</p>
+          <p class="text">Точность распознавания занятости мест — до 95%</p>
         </div>
         <div class="card">
           <div class="icon">
             <img src="@/assets/images/camera.svg" alt="car icon" />
           </div>
-          <p class="text"> Интеграция с видеокамерами</p>
+          <p class="text">Интеграция с видеокамерами</p>
         </div>
         <div class="card">
           <div class="icon">

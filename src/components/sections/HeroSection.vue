@@ -3,14 +3,14 @@ import TheHeader from '@/components/layout/TheHeader.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 
 const scrollToSection = (sectionId) => {
-  const element = document.getElementById(sectionId);
+  const element = document.getElementById(sectionId)
   if (element) {
     element.scrollIntoView({
       behavior: 'smooth',
-      block: 'start'
-    });
+      block: 'start',
+    })
   }
-};
+}
 </script>
 
 <template>
@@ -22,8 +22,8 @@ const scrollToSection = (sectionId) => {
           <div class="hero-text">
             <h1 class="title">Smart Parking</h1>
             <p class="text">
-              Интеллектуальная система мониторинга парковочных мест. Экономьте время и нервы с помощью
-              технологий искусственного интеллекта.
+              Smart Parking — интеллектуальная система видеоаналитики парковочных мест. Помогаем
+              бизнесу управлять парковками с помощью компьютерного зрения и ИИ.
             </p>
             <BaseButton @click="scrollToSection('about')">Узнать больше</BaseButton>
           </div>
@@ -35,13 +35,20 @@ const scrollToSection = (sectionId) => {
       </div>
 
       <div class="wave-background">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" class="wave-svg">
-          <path fill="url(#wave-gradient)"
-                d="M0,192L60,186.7C120,181,240,171,360,181.3C480,192,600,224,720,229.3C840,235,960,213,1080,202.7C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          class="wave-svg"
+        >
+          <path
+            fill="url(#wave-gradient)"
+            d="M0,192L60,186.7C120,181,240,171,360,181.3C480,192,600,224,720,229.3C840,235,960,213,1080,202.7C1200,192,1320,192,1380,192L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+          ></path>
           <defs>
             <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#818cf8;stop-opacity:1" />
+              <stop offset="0%" style="stop-color: #4f46e5; stop-opacity: 1" />
+              <stop offset="100%" style="stop-color: #818cf8; stop-opacity: 1" />
             </linearGradient>
           </defs>
         </svg>

@@ -17,7 +17,7 @@ import TheFooter from '@/components/layout/TheFooter.vue'
       <AboutSection />
       <AdvantagesSection />
       <FeaturesSection />
-      <UsersSection />
+<!--      <UsersSection />-->
       <InterfacesSection />
       <WhyUsSection />
       <ContactFormSection />
